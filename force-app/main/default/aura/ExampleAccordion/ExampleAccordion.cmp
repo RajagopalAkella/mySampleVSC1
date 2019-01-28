@@ -1,0 +1,37 @@
+<aura:component controller="SampleAccountsSet">
+    <aura:attribute name="accounts" type="Account[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <lightning:accordion activeSectionName="B">
+        <aura:iteration items="{!v.accounts}" var="acc" indexVar="ind">
+            <lightning:accordionSection name="{!ind}" label="{!acc.Name}">
+                {!acc.Name} - {!acc.Phone}            
+            </lightning:accordionSection>
+        </aura:iteration>
+    </lightning:accordion>  
+        
+    <br/>
+    Next section:
+    <br/>
+    
+    <ul class="slds-accordion" aura:id="accordionmain">
+    	<aura:iteration items="{!v.accounts}" var="acc" indexVar="index">
+            <form class="account-form" onsubmit="{c.handleClick}" >
+                
+                <li class="slds-accordion__list-item" data-index="{!index}">
+                    <section class="slds-accordion__section slds-is-open">
+                        <div class="slds-accordion__summary">
+                            <h3 class="slds-accordion__summary-heading">
+                               <!-- <lightning:buttonIcon iconName="utility:switch" variant="bare" class="slds-button_reset slds-accordion__summary-action" onclick="{!c.handleClick}" />
+                                <span class="slds-truncate" >{!acc.Name}</span> -->
+                                <lightning:button label="{!acc.Name}" type="submit" />
+                            </h3>
+                        </div>
+                    </section>
+                </li>
+                
+            </form>
+        </aura:iteration>
+    </ul>
+    
+</aura:component>

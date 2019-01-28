@@ -1,0 +1,8 @@
+<aura:component >
+    <aura:registerEvent name="sampleToDeleteEvt" type="c:sampleToDeleteEvt" />
+    <aura:attribute name="text" type="string" default="Sample String" />
+    
+    <lightning:button label="FrameworButton" onclick="{!c.handleClick}" />
+    <br/>
+    {!v.text}
+</aura:component>
