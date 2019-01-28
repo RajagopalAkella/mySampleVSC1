@@ -5,6 +5,7 @@ public class aasample {
 //Sample check from GitHub 23Dec2018-2
 //sample comment from vscode
 //sample comment from vscode again 1
+//sample comment again from vscode again 2
     public static integer addMethod(integer a, integer b){
         return a + b;
     }
